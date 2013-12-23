@@ -1,0 +1,155 @@
+html * {
+}
+
+body {
+    background-color: #eee;
+}
+.container {
+    width: 900px;
+    margin: 0 auto;
+}
+.main.container {
+    /*background-color: #fff;*/
+}
+
+header h1 {
+    text-align: center;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-size: 55px;
+    font-weight: 400;
+}
+
+.section-title {
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    text-align: center;
+    font-size: 25px;
+    color: #555;
+    padding: 15px 0;
+    font-weight: 200;
+    text-decoration: dashed;
+    position: relative;
+}
+.section-title .counter {
+    position: absolute;
+    right: 0;
+    font-family: freight-text-pro, Georgia, Cambria, 'Times New Roman', Times, serif;
+    color: #777;
+    font-size: 14px;
+}
+
+
+section {
+    margin-bottom: 20px;
+}
+
+.git .nocommits,
+.git .commits {
+    background-color: #fcfcfc;
+}
+.git .nocommits {
+    text-align: center;
+    font-family: freight-text-pro, Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    padding: 10px 0;
+    color: #333;
+}
+.git .commits {
+}
+
+.git .commits ul {
+    /*list-style-type: decimal;*/
+    list-style: none;
+    padding-left: 0;
+}
+.git .commits ul,
+.git .commits ul li span {
+    color: #333;
+}
+.git .commits ul li {
+    font-size: 15px;
+    /*
+    font-family: freight-text-pro, Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-family: 'Source Sans Pro', source-sans-pro, HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    */
+    font-family: Consolas, Menlo, 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    cursor: pointer;
+}
+.git .commits ul li span {
+    display: inline-block;
+    padding: 6px 0;
+}
+.git .commits ul li .mark {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+    padding: 0;
+    background: transparent;
+}
+.git .commits ul li .mark.marked {
+    background: #aaa;
+}
+.git .commits ul li .number {
+    border-right: 1px solid #ddd;
+    width: 35px;
+    padding-right: 5px;
+    text-align: right;
+}
+.git .commits ul li .message {
+    padding-left: 5px;
+    width: 520px;
+}
+
+.git .commits ul li .branches {
+    width: 200px;
+    color: #777;
+    font-family: freight-text-pro, Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+.git .commits ul li .time {
+    width: 100px;
+    font-family: freight-text-pro, Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-color: #777;
+    text-align: right;
+    font-style: italic;
+}
+
+section.buttons {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.buttons input[type="submit"] {
+    display: block;
+    padding: 15px;
+    width: 150px;
+    background: #ccc;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-size: 23px;
+    color: #444;
+}
+
+.buttons input[type="submit"]:hover {
+    background: #d3d3d3;
+}
+.buttons input[type="submit"]:active {
+    box-shadow: inset 0 0 10px rgba(10, 10, 10, 0.5);
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    color: #666;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+footer a {
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    color: #444;
+    text-decoration: none;
+    font-size: 13px;
+}

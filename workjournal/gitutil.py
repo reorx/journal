@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import datetime
 import logging
 from git import Repo
 
@@ -22,6 +23,7 @@ class UserRepo(object):
         logging.debug('branches: %s', branches)
 
         for branch in branches:
+            print '---'
             # If we need date comparision then authored_date is the choice
             # as it is smaller or equal to committed_date
             for i in self.repo.iter_commits(branch, since=since, until=until):
@@ -29,6 +31,7 @@ class UserRepo(object):
                 if i.author.email in self.emails:
                     commit_set.add(i, branch)
 
+        commit_set.sort('time')
         return commit_set
 
 
@@ -49,6 +52,15 @@ class CommitSet(object):
             if i[0].hexsha == hexsha:
                 return i
         return None
+
+    def sort(self, by):
+        kwargs = {}
+        if by == 'time':
+            kwargs['key'] = lambda x: x[0].authored_date
+        self.commits.sort(**kwargs)
+        for i in self.commits:
+            print datetime.datetime.fromtimestamp(i[0].authored_date).strftime('%m-%d %H:%M:%S')
+            print type(i[0].authored_date)
 
     def branch_commits(self):
         d = {}

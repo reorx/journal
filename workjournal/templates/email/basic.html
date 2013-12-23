@@ -1,0 +1,15 @@
+{% block css %}
+{% endblock %}
+
+
+{% block body %}
+
+{% if git_journal %}
+    {{ git_journal }}
+{% endif %}
+
+{% if user_journal %}
+    {{ user_journal }}
+{% endif %}
+
+{% endblock %}

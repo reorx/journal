@@ -1,0 +1,45 @@
+html { 
+    padding:15px;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-left: solid 1 #000;
+  background-color: rgba(150, 150, 150, 0.5);
+}
+html::-webkit-scrollbar-button:start:decrement {
+  display: block;
+  height: 0px;
+}
+html::-webkit-scrollbar-button:end:increment {
+  display: block;
+  height: 0px;
+}
+html::-webkit-scrollbar-button:vertical:increment {
+  background-color: transparent;
+}
+html::-webkit-scrollbar-track:enabled {
+  background-color: rgba(100, 100, 100, 0.1);
+}
+html::-webkit-scrollbar-thumb:vertical {
+  height: 50px;
+  background-color: rgba(0,0,0,0.3);
+  -webkit-border-radius: 5px;
+}
+html::-webkit-scrollbar-thumb:horizontal {
+  width: 50px;
+  background-color: rgba(0,0,0,0.2);
+  -webkit-border-radius: 5px;
+}
+
+body {
+  border:0;
+  background:#fcfcfc;
+  font-family:monospace;
+  font-size:14px;
+  padding:10px;
+  line-height:1.35em;
+  margin:0;
+  padding:0;
+}
