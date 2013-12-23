@@ -1,4 +1,5 @@
 {
+    "email": ["a@b.c"],
     "projects": ["path1", "path2"],
     "sequence": ["git", "myjournal"]
 }
