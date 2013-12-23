@@ -3,13 +3,29 @@
 
 import datetime
 import logging
+import subprocess
 from git import Repo
+
+
+def get_user_email():
+    p = subprocess.Popen('git config user.email'.split(),
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    email, _ = p.communicate()
+    if email:
+        return email.strip()
+    return None
 
 
 class UserRepo(object):
     def __init__(self, path, emails=None):
         self.repo = Repo(path)
-        self.emails = emails or []
+        if not emails:
+            email = get_user_email()
+            if email:
+                emails = [email]
+            else:
+                emails = []
+        self.emails = emails
 
     @property
     def branches(self):

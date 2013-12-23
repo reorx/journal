@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block css %}
+{% endblock %}
+
+{% block main %}
+<div class="section-title">Mail Preview</div>
+<iframe frameborder="0" id="preview-frame" class="container"></iframe>
+
+<section class="buttons">
+    <input type="submit" value="Send" class="font-gotham">
+</section>
+{% endblock %}
+
+{% block script %}
+<script>
+    var preview = "{{ preview|text2var }}"
+    var iframe = document.getElementById('preview-frame');
+    iframe.contentWindow.document.write(preview);
+    iframe.height = iframe.contentWindow.document.body.scrollHeight;
+</script>
+{% endblock %}

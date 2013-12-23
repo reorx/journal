@@ -1,3 +1,4 @@
 torext
 jinja2
-GitPython
+GitPython==0.3.2.RC1
+markdown

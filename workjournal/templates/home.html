@@ -1,68 +1,59 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="/static/css/fonts.css" media="all">
+{% extends "layout.html" %}
+
+{% block css %}
     <link rel="stylesheet" href="/static/css/home.css" media="all">
-</head>
-<body>
-    <header class="container">
-        <h1>WORK JOURNAL</h1>
-    </header>
+{% endblock %}
 
-    <div class="main container">
-        <form action="">
+{% block main %}
+    <form action="/preview" method="POST">
 
-        <section class="git">
-            <div class="section-title">Git Commits
-                {% if commits.commits %}
-                <div class="counter"><span class="number">{{ commits.commits|length }}</span> selected</div>
-                {% endif %}
-            </div>
-            
+    <section class="git">
+        <div class="section-title">Git Commits
             {% if commits.commits %}
-                <div class="commits">
-                    <ul>
-                    {% for commit, branches in commits.commits %}
-                        <li>
-                            <span class="mark marked"></span>
-                            <span class="number">{{ loop.index }}</span>
-                            <span class="message">{{ commit.message }}</span>
-                            <span class="branches">{{ ','.join(branches) }}</span>
-                            <span class="time">{{ commit.authored_date|timestamp2strftime }}</span>
-                        </li>
-                    {% endfor %}
-                    </ul>
-                    <input type="hidden" name="branches">
-                </div>
-            {% else %}
-                <div class="nocommits">No Commits Today</div>
+            <div class="counter font-serif"><span class="number">{{ commits.commits|length }}</span> selected</div>
             {% endif %}
-        </section>
+        </div>
+        
+        {% if commits.commits %}
+            <div class="commits box">
+                <ul>
+                {% for commit, branches in commits.commits %}
+                    <li>
+                        <span class="mark marked"></span>
+                        <span class="number font-mono">{{ loop.index }}</span>
+                        <span class="message font-mono">{{ commit.message }}</span>
+                        <span class="branches font-serif">{{ ','.join(branches) }}</span>
+                        <span class="time font-serif">{{ commit.authored_date|timestamp2strftime }}</span>
+                        <span class="hex" style="display:none;">{{ commit.hexsha }}</span>
+                    </li>
+                {% endfor %}
+                </ul>
+                <input type="hidden" name="commits" value="{{ commits|joincommitshex }}">
+            </div>
+        {% else %}
+            <div class="nocommits box">No Commits Today</div>
+        {% endif %}
+    </section>
 
-        <section class="editor">
-            <div class="section-title">My Journal</div>
-                <div id="epiceditor"></div>
-        </section>
+    <section class="editor">
+        <div class="section-title">My Journal</div>
+        <div id="epiceditor"></div>
+        <textarea id="editorcontent" name="myjournal" style="display: none;"></textarea>
+    </section>
 
-        <section class="buttons">
-            <input type="submit" value="Preview">
-        </section>
+    <section class="buttons">
+        <input type="submit" value="Preview" class="font-gotham">
+    </section>
 
-        </form>
-    </div>
+    </form>
+{% endblock %}
 
-    <footer class="container">
-        Project source: <a href="https://github.com/reorx/workjournal">workjournal</a>. Made by @<a href="http://github.com/reorx">reorx</a>
-    </footer>
-
-    <script src="/static/js/jquery-2.0.3.min.js" type="text/javascript"></script>
+{% block script %}
     <script src="/static/EpicEditor/js/epiceditor.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         var opts = {
             container: 'epiceditor',
-            textarea: null,
+            textarea: 'editorcontent',
             basePath: '/static/EpicEditor',
             clientSideStorage: true,
             localStorageName: 'epiceditor',
@@ -106,8 +97,11 @@
             $this.find('.mark').toggleClass('marked');
             var marked = $('.git .commits ul li .mark.marked')
             $('.section-title .counter .number').html(marked.length);
+            var hexs = [];
+            marked.each(function() {
+                hexs.push($(this).parent().find('.hex').html());
+            })
+            $('input[name="commits"]').val(hexs.join());
         })
     </script>
-
-</body>
-</html>
+{% endblock %}

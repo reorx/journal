@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/static/css/fonts.css" media="all">
+    <link rel="stylesheet" href="/static/css/layout.css" media="all">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+    <header class="container">
+        <h1 class="font-gotham">WORK JOURNAL</h1>
+    </header>
+
+    <div class="main container">
+        {% block main %}
+        {% endblock %}
+    </div>
+
+    <footer class="container font-serif">
+        Project source: <a href="https://github.com/reorx/workjournal">workjournal</a>. Made by @<a href="http://github.com/reorx">reorx</a>
+    </footer>
+
+    <script src="/static/js/jquery-2.0.3.min.js" type="text/javascript"></script>
+
+    {% block script %}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block css %}
+.notice {
+    padding: 15px 0;
+}
+{% endblock %}
+
+{% block main %}
+    <div class="box notice">{{ notice }}</div>
+{% endblock %}

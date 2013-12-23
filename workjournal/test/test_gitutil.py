@@ -13,11 +13,6 @@ from workjournal.gitutil import UserRepo
 call = functools.partial(subprocess.call, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 
-def popen(*args):
-    p = subprocess.Popen(*args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    return p.communicate()
-
-
 def create_sample_repo():
     print 'Creating sample repository'
     dirpath = '/tmp/sample_repo' + ''.join([random.choice(string.ascii_letters) for i in range(5)])
@@ -52,8 +47,8 @@ class TestUserRepo(object):
         call('rm -rf %s' % self.repopath)
 
     def test_get_date_commits(self):
-        email, _ = popen('git config user.email'.split())
-        ur = UserRepo(self.repopath, emails=[email.strip()])
+        ur = UserRepo(self.repopath)
+        print ur.emails
         commit_set = ur.get_date_commits(since=datetime.datetime.now().strftime('%Y-%m-%d'))
         print commit_set
         assert len(commit_set.in_branch('master')) == 2

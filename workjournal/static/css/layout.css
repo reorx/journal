@@ -1,0 +1,92 @@
+html * {
+}
+
+body {
+    background-color: #eee;
+}
+.container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 55px;
+    font-weight: 400;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+}
+
+.section-title {
+    text-align: center;
+    font-size: 25px;
+    color: #555;
+    padding: 15px 0;
+    font-weight: 200;
+    text-decoration: dashed;
+    position: relative;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+}
+
+.font-gotham {
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+}
+.font-mono {
+    font-family: Consolas, Menlo, 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+}
+.font-serif {
+    font-family: freight-text-pro, Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+.section-title .counter {
+    position: absolute;
+    right: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+
+section {
+    margin-bottom: 20px;
+}
+
+section .box {
+    background-color: #fcfcfc;
+}
+
+section.buttons {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.buttons input[type="submit"] {
+    display: block;
+    padding: 15px;
+    width: 150px;
+    background: #ccc;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    font-size: 23px;
+    color: #444;
+}
+
+.buttons input[type="submit"]:hover {
+    background: #d3d3d3;
+}
+.buttons input[type="submit"]:active {
+    box-shadow: inset 0 0 10px rgba(10, 10, 10, 0.5);
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    color: #666;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+footer a {
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    color: #444;
+    text-decoration: none;
+    font-size: 13px;
+}
