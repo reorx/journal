@@ -3,10 +3,14 @@
 
 from torext.app import TorextApp
 from torext.handlers import BaseHandler
-import settings
+try:
+    from . import app_settings
+except ImportError:
+    print 'execute app.py as __main__'
+    import app_settings
 
 
-app = TorextApp(settings)
+app = TorextApp(app_settings)
 
 
 @app.route('/')

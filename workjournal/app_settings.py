@@ -1,4 +1,6 @@
-PROJECT = 'journal'
+# The application level settings of workjournal web app
+
+PROJECT = 'workjournal'
 
 LOCALE = 'en_US'
 
