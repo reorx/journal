@@ -5,7 +5,7 @@ from torext.app import TorextApp
 from torext.handlers import BaseHandler
 try:
     from . import app_settings
-except ImportError:
+except ValueError:
     print 'execute app.py as __main__'
     import app_settings
 
@@ -21,5 +21,6 @@ class HomeHandler(BaseHandler):
 
 if __name__ == '__main__':
 
+    # Only for testing purpose
     app.command_line_config()
     app.run()
