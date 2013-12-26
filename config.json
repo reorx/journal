@@ -1,5 +1,12 @@
 {
-    "email": ["a@b.c"],
+    "title_format": "{name} {date:%Y-%m-%d} journal",
+    "name": "foo",
     "projects": ["path1", "path2"],
     "sequence": ["git", "myjournal"]
+    "email_account": {
+        "email": "a@b.c",
+        "password": "<base64>"
+    }
+    "git_author_emails": ["a@b.c"],
+    "send_to": ["foo@bar-inc.com", "depa-list@bar-inc.com"]
 }
