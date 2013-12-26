@@ -1,3 +1,7 @@
+/*
+ * v1
+ */
+
 html { 
     padding:15px;
 }
@@ -35,11 +39,15 @@ html::-webkit-scrollbar-thumb:horizontal {
 
 body {
   border:0;
-  background:#fcfcfc;
+  background:#fefefe;
   font-family:monospace;
   font-size:14px;
   padding:10px;
   line-height:1.35em;
   margin:0;
   padding:0;
+}
+
+body * {
+    color: #333;
 }

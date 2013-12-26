@@ -2,7 +2,7 @@ html * {
 }
 
 body {
-    background-color: #eee;
+    background-color: #f1f1f3;
 }
 .container {
     width: 900px;
@@ -78,7 +78,7 @@ section {
 }
 
 section .box {
-    background-color: #fcfcfc;
+    background-color: #fefefe;
 }
 
 section.buttons {

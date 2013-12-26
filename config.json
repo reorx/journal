@@ -9,4 +9,5 @@
     }
     "git_author_emails": ["a@b.c"],
     "send_to": ["foo@bar-inc.com", "depa-list@bar-inc.com"]
+    "signature": "---\nReorx"
 }

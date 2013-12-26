@@ -1,4 +1,12 @@
-Journal
-=======
+Workjournal
+===========
 
-The journal generator and sender, for G(N) E(E) E(R) K(D)
+Write beautifully formatted work journal easily.
+
+
+Credits
+-------
+
+https://github.com/kylestetz/CLNDR
+
+http://kenshin54.github.io/popline
