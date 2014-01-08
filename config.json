@@ -2,7 +2,7 @@
     "title_format": "{name} {date:%Y-%m-%d} journal",
     "name": "foo",
     "projects": ["path1", "path2"],
-    "sequence": ["git", "myjournal"]
+    "layout_sequence": ["git", "myjournal"]
     "email_account": {
         "email": "a@b.c",
         "password": "<base64>"

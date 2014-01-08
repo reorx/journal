@@ -44,6 +44,15 @@ header h1 {
     margin-right: 0;
 }
 
+
+.settings {
+    display: none;
+    background: #fff;
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 50%;
+}
+
 .section-title {
     text-align: center;
     font-size: 25px;
