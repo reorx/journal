@@ -1,16 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import base64
+import getpass
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 
-def send_email(text, html):
-    address_book = ['reorxmeng@sohu-inc.com']
-    sender = 'reorxmeng@sohu-inc.com'
-    subject = "My subject"
+def send_email(subject, text, html):
+    username = raw_input('username:')
+    password = getpass.getpass('password:')
+    send_to = raw_input('send to:')
+
+    sender = '%s@sohu-inc.com' % username
+    address_book = [send_to]
 
     # Create message container - the correct MIME type is multipart/alternative.
     msg = MIMEMultipart('alternative')
@@ -33,6 +36,10 @@ def send_email(text, html):
     #print msg_str
 
     smtp = smtplib.SMTP('mail.sohu-inc.com')
-    smtp.login('reorxmeng', base64.b64decode('bXgzMjBTT0hVMg=='))
+    smtp.login(username, password)
     smtp.sendmail(sender, address_book, msg_str)
     smtp.quit()
+
+
+if __name__ == '__main__':
+    send_email('test', 'hello', '<html><body><h1>HELLO</h1></body></html>')
